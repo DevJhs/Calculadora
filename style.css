@@ -1,85 +1,188 @@
 body{
-    background-color: black;
-    display: flex;
-    justify-content: center;
+   background-color: rgb(22, 22, 22);
+
+}
+@keyframes Bg{
+    from{ background-color: #ff008e ;}
+    30%{ background-color:rgb(255, 0, 234) ;}
+    60%{background-color: #c300ff;}
+    70% { background-color:#561dda }
+    80%{background-color: #c300ff;}
+    90%{ background-color:rgb(255, 0, 234) ;}
+    100% { background-color: #ff008e ;}
+}
+@keyframes Fg{
     
+    from{ background-color:  rgb(255, 255, 255); color: black; }
+    30%{ background-color:  rgb(199, 199, 199); color: rgb(63, 63, 63);}
+    60%{ background-color:  rgb(0, 0, 0); color: white;}
+    70%{ background-color:  rgb(199, 199, 199); color: rgb(63, 63, 63);}
+    80%{ background-color:  rgb(194, 194, 194); color: rgb(34, 33, 33);}
+    90%{ background-color:  rgb(250, 250, 250); color: rgb(26, 26, 26);}
+    100%{ background-color:  rgb(255, 255, 255); color: rgb(0, 0, 0);}
+
+}
+@keyframes Rt{
+    from{ transform: rotate(360deg) translateY(100px) scale(1.2,1.2) ;}
+}
+@keyframes Cal{
+    from{transform: skew(40deg);}
+}
+@keyframes Sx{
+    from{box-shadow: 3px 4px 5px red;}
+    50%{box-shadow: 3px 4px 5px rgb(2, 255, 2);}
+    100%{box-shadow:3px 4px 5px blue;}
 }
 
-#calculadora{
+#Calculadora{
+    margin: auto;
+    margin-top: 50px;
+    padding: 5px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: flex-start;
+   border:4px solid rgb(0, 0, 0);
+   border-radius: 5%;
+   width: 314px;
+   height: 325px;
+   box-shadow: 3px 4px 5px rgb(255, 254, 254);
 
+    animation-name: Bg,Cal,Sx;
+    animation-duration: 20s,8s;
+    animation-iteration-count: infinite,1;
+    
+}
+#display{
+    color: rgb(255, 255, 255);
+    text-align: right;
+    width: 235px;
+    height: 40px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 6%;
+    font-size: 20px;
+    font-style: italic;
+    box-shadow: 3px 4px 5px rgb(255, 254, 254);
+    animation-name:  Fg, Rt,Sx;
+    animation-duration: 5.5s;
+    animation-iteration-count: infinite,1,0;
+    transition: 2s;
+} 
+#display:hover{
+    animation-iteration-count: infinite,0,infinite;
+}
+#apagar{
+    
+    color: white;
+    width: 55px;
+    height: 40px;
+    margin-left: 12px;
+    border: 2px solid wheat;
+    border-radius: 10%;
+    font-size: 20px;
+    font-style: italic;
+    box-shadow: 3px 4px 5px rgb(255, 254, 254);
+    animation-name: Fg, Rt;
+    animation-duration: 5.5s;
+    animation-iteration-count: infinite,1;
+    transition: 0s;
+}
+#apagar:active{
+    
+    transition: 0s;
+    box-shadow: 3px 4px 5px rgb(235, 0, 0);
+    transform: translateX(-10px);
+    
+}
+#numeros{
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(0, 0, 0);
-    width: 320px;
-    height: 450px;
-    border: 10px solid rgb(226, 226, 226);
-    border-radius: 2%;
-
-}
-#tela{
-    display: flex;
-    background-color: rgb(37, 37, 37);
-    color: rgb(133, 133, 133);
-    border: 4px solid rgb(100, 100, 100);
-    width: 240px;
-    height: 60px;
-    margin: 5px;
-    font-size: 45px;
-    flex-flow: row-reverse;
-
-}    
-#numeros{
+    width: 254px;
     
-    display: flex;
-    width: 249px;
-    height: 400px;
-    flex-flow: wrap-reverse ;
-    
+
 }
 .numero{
+    cursor: pointer;
+    color: white;
+    width: 84px;
+    height: 65px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5%;
+    font-size: 20px;
+    font-style: italic;
+    animation-name: Fg, Rt;
+    animation-duration: 5.5s;
+    animation-iteration-count: infinite,1;
+    transition: 1s;
+    box-shadow: 3px 4px 5px rgb(255, 254, 254);
+
+}
+.numero:hover{
+
+   transform: rotateZ(20deg);
     
-    width: 72px;
-    height: 60px; 
-    margin: 5px;
-    color:rgb(255, 255, 255);
-    background-color: rgb(54, 54, 54);
-    border: 3px solid rgb(100, 100, 100);
-    border-radius: 2%;
+}
+.numero:active{
+    transition: 1s;
+    box-shadow: 3px 4px 5px rgb(16, 35, 202);
+  transform: translateY(4px);
 }
 .zero{
-    width: 235px!important;
+    
+    margin-top: 5px;
+    width: 255px;
+    
+}.zero:hover{
+    transform: rotateZ(0deg) !important;
 }
-
+.zero:active{
+    transition: 0s;
+    box-shadow: 3px 4px 5px rgb(0, 0, 0);
+  transform: translateY(5px);
+}
 #operadores{
-    
-    display: flex;
-    flex-flow: column;
+    display: flex;   
+    flex-direction: column;
     width: 55px;
-    height: 450px;
-
-}
-
-.apagar{
+    height: 264px;
     
-    margin: 15px 0px 0px 3px !important;
-    height: 45px!important;
 }
 .operador{
-    margin: 5px;
+    
+    cursor: pointer;
+    color: white;
     width: 55px;
-    height: 50px;
-    color:rgb(255, 255, 255);
-    background-color: rgb(54, 54, 54);
-    border: 1px solid rgb(100, 100, 100);
-
+    height: 255px;
+    margin: 3px;
+    border: 2px solid wheat;
+    border-radius: 10%;
+    font-size: 20px;
+    font-style: italic;
+    box-shadow: 3px 4px 5px rgb(255, 254, 254);
+    animation-name: Fg,Rt;
+    animation-duration: 5.5s;
+    animation-iteration-count: infinite,1;
+    transition: 1s;
 }
-#textinho{
-  color: rgb(240, 215, 168);
-  margin: 5px;
-  font-style: italic;
-  text-shadow: 3px 2px rgb(139, 92, 92);
-  font-weight: bold;
-
+.operador:active{
+    
+    transition: 1s;
+    box-shadow: 3px 4px 5px rgb(0, 0, 0);
+    transform: translateY(4px);
+    
 }
-
-
+#Ds{
+    display: inline-block;
+    margin-left: 220px;
+    margin-top: 70px;
+      color: rgb(0, 225, 255);
+      text-shadow: 2px 2px rgb(0, 89, 255);
+      font-size: 18px;
+      font-weight: bold;
+      font-style: italic;
+      font-variant: small-caps;    
+       
+}
+a{
+    
+    text-decoration: none;
+}

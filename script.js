@@ -1,26 +1,28 @@
-function inserir(numero){
 
-    document.getElementById("tela").innerHTML+=numero;
- 
+
+
+
+function In(In) {
+ display.value=display.value+In;
 };
-function limpar(){
-
-    document.getElementById("tela").innerHTML="";
-
-};
-function apagar(){
-    var tela=document.getElementById("tela").innerHTML;
-    document.getElementById("tela").innerHTML=tela.substring(0, tela.length -1);
+function apagar() {
+    
+ display.value=display.value.substring(0, display.value.length  -1)
 
 };
-function calcular(){
-    var tela=document.getElementById("tela").innerHTML;
-    if(tela){
-        document.getElementById("tela").innerHTML=eval(tela);
+function opIgual() {
 
-    }
-    else{
-        document.getElementById("tela").innerHTML="que Que EuCalcule?";
+   display.value=display.value+"="+eval(display.value);
 
-    }
+}
+
+function opLimpar() {
+    display.value="";
 };
+
+
+
+
+    
+
+
